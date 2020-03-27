@@ -6,14 +6,35 @@ public class Artikal {
     private String sifra, naziv;
     private double cijena;
 
-    public Artikal(){}
+    public Artikal(String sifra, String naziv, double cijena){
+        if(sifra==""){
+            throw new IllegalArgumentException("Šifra je prazna");
+        }
+        else{
+            this.sifra = sifra;
+        }
+
+        if(naziv==""){
+            throw new IllegalArgumentException("Naziv je prazan");
+        }
+        else{
+            this.naziv = naziv;
+        }
+
+        if(cijena<=0){
+            throw new IllegalArgumentException("Cijena je negativna");
+        }
+        else{
+            this.cijena = cijena;
+        }
+    }
 
     public String getNaziv() {
         return naziv;
     }
 
     public void setNaziv(String naziv) {
-        if(getNaziv()==""){
+        if(naziv==""){
             throw new IllegalArgumentException("Naziv je prazan");
         }
         else{
@@ -26,7 +47,7 @@ public class Artikal {
     }
 
     public void setSifra(String sifra) {
-        if(getSifra()==""){
+        if(sifra==""){
             throw new IllegalArgumentException("Šifra je prazna");
         }
         else{
@@ -39,7 +60,7 @@ public class Artikal {
     }
 
     public void setCijena(double cijena) {
-        if(getCijena()<=0){
+        if(cijena<=0){
             throw new IllegalArgumentException("Cijena je negativna");
         }
         else {
