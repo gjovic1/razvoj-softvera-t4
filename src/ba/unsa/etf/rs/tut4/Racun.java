@@ -55,11 +55,11 @@ public class Racun {
         for(StavkeRacuna stvar : stvari){
             izlaz.append(
                     stvar.getArtikal().getSifra())
-                    .append(" ").append(stvar.getKol())
-                    .append(" ").append(stvar.getArtikal().getCijena() * stvar.getKol())
+                    .append("    ").append(stvar.getKol())
+                    .append("   ").append(stvar.getArtikal().getCijena() * stvar.getKol())
                     .append("\n");
         }
-        izlaz.append("UKUPNO").append(" ").append(ukupanIznos());
+        izlaz.append("UKUPNO").append("        ").append(ukupanIznos());
         return izlaz.toString();
     }
 }

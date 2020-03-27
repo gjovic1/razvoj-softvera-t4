@@ -3,9 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="503.0" prefWidth="506.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.2-internal" fx:controller="ba.unsa.etf.rs.tut4.Controller">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="503.0" prefWidth="506.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rs.tut4.Controller">
   <tabs>
-    <Tab text="Untitled Tab 1">
+    <Tab text="Artikli">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -15,9 +15,18 @@
                </children></AnchorPane>
       </content>
     </Tab>
-    <Tab text="Untitled Tab 2">
+    <Tab text="Račun">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="23.0" text="Artikal:" />
+                  <Label layoutX="14.0" layoutY="70.0" text="Količina:" />
+                  <Label layoutX="12.0" layoutY="264.0" text="Aktuelni račun:" />
+                  <ChoiceBox fx:id="choiceArts" layoutX="137.0" layoutY="19.0" prefWidth="150.0" />
+                  <Spinner fx:id="spinnerKol" layoutX="138.0" layoutY="66.0" />
+                  <Button fx:id="racBtn" layoutX="137.0" layoutY="120.0" mnemonicParsing="false" onAction="#dodajStavke" text="Dodaj" />
+                  <TextArea fx:id="konacnoArea" layoutX="137.0" layoutY="172.0" prefHeight="200.0" prefWidth="200.0" />
+               </children></AnchorPane>
       </content>
     </Tab>
   </tabs>
