@@ -1,5 +1,7 @@
 package ba.unsa.etf.rs.tut4;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
@@ -9,6 +11,14 @@ public class Controller {
     public TextArea beforeIzbaciArea;
     public TextArea afterIzbaciArea;
     public Button btnIzbaci;
+
+    public ChoiceBox<Artikal> choiceArts;
+    public Spinner spinnerKol;
+    public TextArea konacnoArea;
+
+    private Racun racun;
+    private ArrayList<Artikal> finalni;
+    private ObservableList<Artikal> list = FXCollections.observableArrayList();
 
     public void izbaciAction(ActionEvent actionEvent) {
         String arts = beforeIzbaciArea.getText();
@@ -26,5 +36,16 @@ public class Controller {
         }
 
         afterIzbaciArea.setText(res);
+
+        racun = new Racun();
+        finalni = new ArrayList<>(smece);
+        list.addAll(finalni);
+        choiceArts.setItems(list);
+    }
+
+
+    public void dodajStavke(ActionEvent actionEvent) {
+        racun.dodajStavku(choiceArts.getSelectionModel().getSelectedItem(), (Integer) spinnerKol.getValue());;
+        konacnoArea.setText(racun.toString());
     }
 }
