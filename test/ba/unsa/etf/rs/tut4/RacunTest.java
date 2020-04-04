@@ -19,5 +19,12 @@ class RacunTest {
         Racun r = new Racun();
         assertEquals(0, r.ukupanIznos());
     }
+
+    @Test
+    void testToString() {
+        Racun r = new Racun();
+        r.dodajStavku(new Artikal("HLB", "Hljeb", 1.0), 5);
+        assertEquals("HLB    5   5.0\nUKUPNO        5.0", r.toString());
+    }
 }
 
