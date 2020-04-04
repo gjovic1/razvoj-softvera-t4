@@ -95,7 +95,8 @@ class ArtikalTest {
 
     @Test
     void testToString() {
-        Artikal a = new Artikal ("ABC", "Proizvod", 100);
+        Artikal a;
+        a = new Artikal ("ABC", "Proizvod", 100);
         assertEquals("ABC, Proizvod, 100.0", Artikal.toString(a));
     }
 
